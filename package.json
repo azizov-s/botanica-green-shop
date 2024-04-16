@@ -10,7 +10,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@nextui-org/react": "^2.2.10",
     "axios": "^1.6.8",
+    "framer-motion": "^11.1.0",
     "iconsax-react": "^0.0.8",
     "normalize.css": "^8.0.1",
     "prettier": "^3.2.5",
