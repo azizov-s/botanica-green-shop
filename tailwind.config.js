@@ -22,7 +22,6 @@ export default {
 				// ...
 				colors: {
 					green:'#46A358',
-					greenButton:'#46A358',
 					gray96:'f5f5f5',
 					gray24:'3D3D3D',
 				},

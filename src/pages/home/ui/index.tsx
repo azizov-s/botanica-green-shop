@@ -1,14 +1,16 @@
+import { LoginCurve } from "iconsax-react"
 import UI from "../../../shared/ui"
 
 const Home = () => {
 	return (
 		<div className="w-full">
-			<div className="rounded-small h-10">
+			<div className="rounded-small px-7">
 
 			</div>
-			<UI.button>
-				SHOP NOW	
-			</UI.button>
+			<UI.Button size="md" color="default">
+				{/* <LoginCurve size={17}/> */}
+				login
+			</UI.Button>
 		</div>
 	)
 }
