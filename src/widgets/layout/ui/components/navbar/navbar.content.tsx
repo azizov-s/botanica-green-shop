@@ -46,7 +46,7 @@ const Navbar = () => {
 						<button
 							key={e.value}
 							className={
-								`duration-250 h-[100%] pb-[26px] text-[16px] leading-5 border-b-[3px] ` +
+								`duration-500 h-[100%] pb-[26px] text-base leading-5 border-b-[3px] ` +
 								activeLink(e.value)
 							}
 							onClick={() => navigate(e.value)}
@@ -56,7 +56,9 @@ const Navbar = () => {
 					)
 				})}
 			</div>
-			<div className='bg-[red]'></div>
+			<div className='bg-gray-500 max-w-[200px] w-[100%] h-[56px] flex justify-between items-start'>
+				<button></button>
+			</div>
 		</div>
 	)
 }
