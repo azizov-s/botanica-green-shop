@@ -1,7 +1,7 @@
-import Button from './button/index'
+import button from "./button"
 
 const UI = {
-	Button,
+	button,
 }
 
 export default UI

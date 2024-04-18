@@ -15,6 +15,27 @@ export default {
 			lg: '1024px',
 		},
 	},
-	plugins: [nextui()],
+	plugins: [nextui(
+		{
+			themes: {
+			  light: {
+				// ...
+				colors: {
+					green:'#46A358',
+					greenButton:'#46A358',
+					gray96:'f5f5f5',
+					gray24:'3D3D3D',
+				},
+			  },
+			  dark: {
+				// ...
+				colors: {
+					green: '#fdfdfd'
+				},
+			  },
+			  // ... custom themes
+			},
+		  }
+	)],
 
 }

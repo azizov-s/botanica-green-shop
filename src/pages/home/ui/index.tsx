@@ -1,10 +1,14 @@
-import { Button } from "@nextui-org/react"
-import { MyButton } from "./button"
+import UI from "../../../shared/ui"
 
 const Home = () => {
 	return (
-		<div className="w-full dark:text-[#fff]">
-			<Button color="primary">text</Button>
+		<div className="w-full">
+			<div className="rounded-small h-10">
+
+			</div>
+			<UI.button>
+				SHOP NOW	
+			</UI.button>
 		</div>
 	)
 }
