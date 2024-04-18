@@ -1,7 +1,9 @@
-import Button from "./button"
+import Button from "./button";
+import Input from "./input/index";
 
 const UI = {
-	Button,
-}
+  Button,
+  Input,
+};
 
-export default UI
+export default UI;
