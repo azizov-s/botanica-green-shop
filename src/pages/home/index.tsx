@@ -1,4 +1,4 @@
-import Home from './ui/home.content'
+import Home from './ui/index'
 
 const Index = () => {
 	return <Home />
