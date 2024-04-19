@@ -5,12 +5,23 @@ const GInput = extendVariants(Input, {
     variant: {
       bordered: {
         inputWrapper:
-          "border-[green] focus-within:!border-green hover:!border-green rounded-none",
+          "border-[green] rounded-none focus-within:!border-green hover:!border-green",
+      },
+      flat: {
+        inputWrapper: "rounded-r-none hover:!bg-[#fff] focus-within:!bg-[#fff]",
       },
     },
     color: {
       default: {
-        inputWrapper: "bg-[#fff]",
+        inputWrapper:
+          "bg-[#fff] hover:!border-r-transparent focus-within:!border-r-transparent",
+      },
+      primary: {
+        inputWrapper: "bg-[#fff] text-[black]",
+      },
+      simple: {
+        inputWrapper:
+          "bg-[#fff] text-[black] border-r-transparent focus-within:!border-r-transparent hover:!border-r-transparent",
       },
     },
   },

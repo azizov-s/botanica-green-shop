@@ -5,12 +5,12 @@ const Shop = () => {
     <>
       <div className="flex ">
         <UI.Input
-          placeholder="Enter coupon code here"
-          variant="bordered"
-          color="default"
+          placeholder="enter your email address"
+          variant="flat"
+          color="simple"
         />
-        <UI.Button color="success" className="rounded-none">
-          Apply
+        <UI.Button color="success" className="rounded-l-none">
+          Join
         </UI.Button>
       </div>
     </>
