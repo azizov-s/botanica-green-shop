@@ -2,13 +2,57 @@
   "plants": [
     {
       "id": "1",
-      "name": "Plant 1",
-      "img": "https://i.postimg.cc/1RWT2gdS/image-1.png"
+      "name": "Barberton Daisy",
+      "img": "https://i.postimg.cc/1RWT2gdS/image-1.png",
+      "price": "$119.00"
     },
     {
       "id": "2",
-      "name": "Plant 2",
-      "img": "https://i.postimg.cc/Wbgy393N/product-21-320x320-1.png"
+      "name": "Angel Wing Begonia",
+      "img": "https://i.postimg.cc/Wbgy393N/product-21-320x320-1.png",
+      "price": "$169.00"
+    },
+    {
+      "id": "3",
+      "name": "African Violet",
+      "img": "https://i.postimg.cc/wj6cBVkV/image-2.png",
+      "price": "$199.00"
+    },
+    {
+      "id": "4",
+      "img": "https://i.postimg.cc/9F4Hnd9L/01-3.png",
+      "name": "Beach Spider Lily",
+      "price": "$129.00"
+    },
+    {
+      "id": "5",
+      "name": "Blushing Bromeliad",
+      "img": "https://i.postimg.cc/dVMpNzw0/image-7.png",
+      "price": "$139.00"
+    },
+    {
+      "id": "6",
+      "name": "Aluminum Plant",
+      "img": "https://i.postimg.cc/vTnFcMbp/image-8.png",
+      "price": "$179.00"
+    },
+    {
+      "id": "7",
+      "img": "https://i.postimg.cc/sDCbwkVg/image-9.png",
+      "name": "Bird's Nest Fern",
+      "price": "$99.00"
+    },
+    {
+      "id": "8",
+      "name": "Broadleaf Lady Palm",
+      "img": "https://i.postimg.cc/7L5Bx9xR/product-20-320x320-1.png",
+      "price": "$59.00"
+    },
+    {
+      "id": "9",
+      "img": "https://i.postimg.cc/c1BcG2RH/image-10.png",
+      "name": "Chinese Evergreen",
+      "price": "$39.00"
     }
   ]
 }
