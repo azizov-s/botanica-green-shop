@@ -1,0 +1,14 @@
+{
+  "plants": [
+    {
+      "id": "1",
+      "name": "Plant 1",
+      "img": "https://i.postimg.cc/1RWT2gdS/image-1.png"
+    },
+    {
+      "id": "2",
+      "name": "Plant 2",
+      "img": "https://i.postimg.cc/Wbgy393N/product-21-320x320-1.png"
+    }
+  ]
+}

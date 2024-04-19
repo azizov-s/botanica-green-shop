@@ -1,17 +1,13 @@
-import UI from "../../../shared/ui";
-
 const Shop = () => {
   return (
     <>
-      <div className="flex ">
-        <UI.Input
-          placeholder="enter your email address"
-          variant="flat"
-          color="simple"
+      <div className="flex flex-col justify-center items-start">
+        <img
+          src="https://i.postimg.cc/Wbgy393N/product-21-320x320-1.png"
+          alt="Plant"
         />
-        <UI.Button color="success" className="rounded-l-none">
-          Join
-        </UI.Button>
+
+        <p>Barberton Daisy</p>
       </div>
     </>
   );
