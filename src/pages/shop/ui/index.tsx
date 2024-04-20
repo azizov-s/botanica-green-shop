@@ -8,20 +8,20 @@ interface Plant {
   price: string;
 }
 
-const getPlants = async () => {
-  try {
-    const res = await fetch("http://localhost:3000/plants");
-    const data = await res.json();
-    return data;
-  } catch (e) {
-    console.log(e);
-  } finally {
-    console.log("Fetched data");
-  }
-};
-
 const Shop = () => {
   const navigate = useNavigate();
+  const getPlants = async () => {
+    try {
+      const res = await fetch("http://localhost:3000/plants");
+      const data = await res.json();
+      return data;
+    } catch (e) {
+      console.log(e);
+    } finally {
+      console.log("Fetched data");
+    }
+  };
+
   const { data, isError, isLoading } = useQuery({
     queryKey: ["plants"],
     queryFn: () => getPlants(),
@@ -46,7 +46,7 @@ const Shop = () => {
               <div
                 className="border-large h-[250px] flex justify-center"
                 onClick={() => {
-                  navigate(`${plant?.id}`);
+                  navigate(`/shop/${plant?.id}`);
                 }}
               >
                 <img

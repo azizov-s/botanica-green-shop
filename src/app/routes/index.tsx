@@ -1,6 +1,6 @@
 import { Suspense } from "react";
 import { createBrowserRouter } from "react-router-dom";
-import { Home, Layout, Shop } from "./lazy";
+import { Home, Layout, Product, Shop } from "./lazy";
 
 export const router = createBrowserRouter([
   {
@@ -20,7 +20,7 @@ export const router = createBrowserRouter([
         ),
       },
       {
-        path: "shop",
+        path: "/shop",
         element: (
           <Suspense fallback="loading...">
             <Shop />
@@ -28,8 +28,12 @@ export const router = createBrowserRouter([
         ),
       },
       {
-        path: "shop/:id",
-        element: <div>Shop Dynamic Route</div>,
+        path: "/shop/:id",
+        element: (
+          <Suspense fallback="loading...">
+            <Product />
+          </Suspense>
+        ),
       },
       {
         path: "plant-care",

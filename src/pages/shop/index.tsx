@@ -1,7 +1,7 @@
-import Shop from './ui/shop.content'
+import Shop from "./ui/index";
 
 const Index = () => {
-	return <Shop />
-}
+  return <Shop />;
+};
 
-export default Shop
+export default Index;
