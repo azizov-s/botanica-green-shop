@@ -1,8 +1,13 @@
+import { Divider } from "@nextui-org/react";
 import { useQuery } from "@tanstack/react-query";
+import { useState } from "react";
 import { useParams } from "react-router";
+
+const sizes = ["S", "M", "L", "XL"];
 
 const Product = () => {
   const { id } = useParams();
+  const [selectedItem, setSelectedItem] = useState(0);
 
   const getProduct = async (id: string | undefined) => {
     try {
@@ -26,7 +31,7 @@ const Product = () => {
 
   return (
     <>
-      <div className="w-full flex justify-between gap-10">
+      <div className="w-full flex justify-between gap-10 mt-10">
         <div key={data?.id} className="flex-1 flex justify-center">
           <img
             className="max-w-full h-full object-cover"
@@ -34,10 +39,29 @@ const Product = () => {
             alt=""
           />
         </div>
-        <div className="flex-1">
-          <h2>{data?.name}</h2>
+        <div className="flex-1 flex flex-col gap-2">
+          <h2 className="font-bold">{data?.name}</h2>
           <p className="text-[green]">{data?.price}</p>
-          <p>Short description:</p>
+          <Divider />
+          <p className="font-medium">Short description:</p>
+          <p>
+            The ceramic cylinder planters come with a wooden stand to help
+            elevate your plants off the ground. The ceramic cylinder planters
+            come with a wooden stand to help elevate your plants off the ground.{" "}
+          </p>
+          <p className="font-medium">Size:</p>
+          <div className="flex gap-3">
+            {sizes?.map((size, i) => {
+              return (
+                <div
+                  onClick={() => setSelectedItem(i)}
+                  className={`cursor-pointer flex justify-center items-center p-3 w-[30px] h-[30px]  ${selectedItem === i ? "text-[green] border-1 border-green rounded-2xl" : "text-[black] border-1 border-black rounded-2xl"} `}
+                >
+                  {size}
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
     </>
