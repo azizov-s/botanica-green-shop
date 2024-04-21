@@ -1,36 +1,38 @@
 import { Switch } from "@nextui-org/react";
 import { Moon, SearchNormal1, ShoppingCart, Sun1 } from "iconsax-react";
-import { useLocation, useNavigate } from "react-router";
+import { useLocation, useNavigate, useParams } from "react-router";
 import { Icons } from "../../../../shared/assets/icons/icons";
 import useDarkSide from "../../../../shared/hooks/darkmode/useDarkSide";
 import UI from "../../../../shared/ui";
-const data = [
-  {
-    value: "/",
-    content: "Home",
-  },
-  {
-    value: "/shop" || "/shop/:id",
-    content: "Shop",
-  },
-  {
-    value: "/plant-care",
-    content: "Plant Care",
-  },
-  {
-    value: "/blogs",
-    content: "Blogs",
-  },
-];
 
 const Navbar = () => {
   const { pathname } = useLocation();
+  const { id } = useParams();
+  const data = [
+    {
+      value: "/",
+      content: "Home",
+    },
+    {
+      value: "/shop",
+      content: "Shop",
+      dynamic: `/shop/${id}`,
+    },
+    {
+      value: "/plant-care",
+      content: "Plant Care",
+    },
+    {
+      value: "/blogs",
+      content: "Blogs",
+    },
+  ];
   const navigate = useNavigate();
   const { colorTheme, setTheme } = useDarkSide();
 
-  const handleLink = (link: string) => {
+  const handleLink = (link: string, dynamic: string | undefined) => {
     console.log(pathname);
-    return link === pathname
+    return link === pathname || dynamic === pathname
       ? "font-bold border-[#46A358]"
       : "font-normal border-transparent text-[#3D3D3D]";
   };
@@ -53,7 +55,7 @@ const Navbar = () => {
               key={e.value}
               className={
                 `duration-500 h-[100%] pb-[26px] text-base leading-5 border-b-[3px] ` +
-                handleLink(e.value)
+                handleLink(e.value, e.dynamic)
               }
               onClick={() => navigate(e.value)}
             >
