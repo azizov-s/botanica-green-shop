@@ -26,10 +26,19 @@ const Product = () => {
 
   return (
     <>
-      <div key={data?.id}>
-        <img src={data?.img} alt="" />
-        <p>{data?.name}</p>
-        <p>${data?.price}</p>
+      <div className="w-full flex justify-between gap-10">
+        <div key={data?.id} className="flex-1 flex justify-center">
+          <img
+            className="max-w-full h-full object-cover"
+            src={data?.img}
+            alt=""
+          />
+        </div>
+        <div className="flex-1">
+          <h2>{data?.name}</h2>
+          <p className="text-[green]">{data?.price}</p>
+          <p>Short description:</p>
+        </div>
       </div>
     </>
   );

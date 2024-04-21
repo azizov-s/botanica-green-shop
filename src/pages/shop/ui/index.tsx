@@ -44,7 +44,7 @@ const Shop = () => {
           return (
             <div className="flex flex-col" key={plant?.id}>
               <div
-                className="border-large h-[250px] flex justify-center"
+                className="h-[250px] flex justify-center cursor-pointer hover:shadow-md !shadow-lime-500 transition-all"
                 onClick={() => {
                   navigate(`/shop/${plant?.id}`);
                 }}

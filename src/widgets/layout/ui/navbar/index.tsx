@@ -4,14 +4,13 @@ import { useLocation, useNavigate } from "react-router";
 import { Icons } from "../../../../shared/assets/icons/icons";
 import useDarkSide from "../../../../shared/hooks/darkmode/useDarkSide";
 import UI from "../../../../shared/ui";
-
 const data = [
   {
     value: "/",
     content: "Home",
   },
   {
-    value: "/shop",
+    value: "/shop" || "/shop/:id",
     content: "Shop",
   },
   {
@@ -30,6 +29,7 @@ const Navbar = () => {
   const { colorTheme, setTheme } = useDarkSide();
 
   const handleLink = (link: string) => {
+    console.log(pathname);
     return link === pathname
       ? "font-bold border-[#46A358]"
       : "font-normal border-transparent text-[#3D3D3D]";
