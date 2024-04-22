@@ -1,16 +1,14 @@
 import { LoginCurve } from "iconsax-react"
 import UI from "../../../shared/ui"
+import Carousel from "./carousel"
+import EmblaCarousel from "./carousel"
+import EmblaCarousel2 from "./carousel/ts/index2"
 
 const Home = () => {
 	return (
 		<div className="w-full">
-			<div className="rounded-small px-7">
-
-			</div>
-			<UI.Button size="md" color="default">
-				{/* <LoginCurve size={17}/> */}
-				login
-			</UI.Button>
+			{/* <EmblaCarousel/> */}
+			<EmblaCarousel2/>
 		</div>
 	)
 }

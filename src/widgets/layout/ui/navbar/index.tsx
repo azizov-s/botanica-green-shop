@@ -73,7 +73,7 @@ const Navbar = () => {
 					endContent={<Moon size='16' color='#46A358' variant='Bold' />}
 				/>
 				<UI.Button
-					isIconOnly
+					// isIconOnly
 					color='default'
 					size='md'
 					className='dark:bg-green'
