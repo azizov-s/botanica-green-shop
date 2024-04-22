@@ -32,28 +32,24 @@ const Shop = () => {
   return (
     <>
       <div
-        // className="w-full grid grid-cols-auto-fill gap-10 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 "
         style={{
           display: "grid",
           gridTemplateColumns: "repeat(auto-fill, minmax(250px, 1fr))",
           gap: "10px",
           width: "100%",
+          marginTop: "10px",
         }}
       >
         {data?.map((plant: Plant) => {
           return (
             <div className="flex flex-col" key={plant?.id}>
               <div
-                className="h-[250px] flex justify-center cursor-pointer hover:shadow-md !shadow-lime-500 transition-all"
+                className="h-[250px] flex justify-center cursor-pointer hover:shadow-md !shadow-lime-500"
                 onClick={() => {
                   navigate(`/shop/${plant?.id}`);
                 }}
               >
-                <img
-                  src={plant?.img}
-                  alt="Plant"
-                  className="max-w-full h-full object-cover"
-                />
+                <img src={plant?.img} width={"100%"} height={250} alt="Plant" />
               </div>
               <p>{plant?.name}</p>
               <p className="text-[green]">${plant?.price}</p>
