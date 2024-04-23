@@ -15,6 +15,7 @@ const GInput = extendVariants(Input, {
       default: {
         inputWrapper:
           "bg-[#fff] hover:!border-r-transparent focus-within:!border-r-transparent",
+        input: "text-center",
       },
       primary: {
         inputWrapper: "bg-[#fff] text-[black]",

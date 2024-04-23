@@ -2,6 +2,7 @@ import { Divider } from "@nextui-org/react";
 import { useQuery } from "@tanstack/react-query";
 import { useState } from "react";
 import { useParams } from "react-router";
+import UI from "../../../shared/ui";
 
 const sizes = ["S", "M", "L", "XL"];
 
@@ -61,6 +62,21 @@ const Product = () => {
                 </div>
               );
             })}
+          </div>
+          <div className="flex justify-start items-center gap-2 mt-3">
+            <UI.Button
+              size="sm"
+              className="bg-[green] rounded-3xl  p-5 text-[#fff]"
+            >
+              -
+            </UI.Button>
+            <UI.Input size="md" color="default" className="w-[50px]" placeholder="0" />
+            <UI.Button
+              size="sm"
+              className="bg-[green] rounded-3xl  p-5 text-[#fff]"
+            >
+              +
+            </UI.Button>
           </div>
         </div>
       </div>
