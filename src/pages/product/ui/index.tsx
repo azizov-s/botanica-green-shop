@@ -1,15 +1,27 @@
 import { Divider } from "@nextui-org/react";
-import { useQuery } from "@tanstack/react-query";
+import {
+  InvalidateQueryFilters,
+  MutationKey,
+  useMutation,
+  useQuery,
+  useQueryClient,
+} from "@tanstack/react-query";
 import { useState } from "react";
 import { useParams } from "react-router";
 import UI from "../../../shared/ui";
 import { HeartIcon } from "../../../shared/assets/icons/HeartIcon";
 
 const sizes = ["S", "M", "L", "XL"];
+interface Product {
+  img: string;
+  name: string;
+  price: string;
+}
 
 const Product = () => {
   const { id } = useParams();
   const [selectedItem, setSelectedItem] = useState(0);
+  const queryClient = useQueryClient();
 
   const getProduct = async (id: string | undefined) => {
     try {
@@ -26,6 +38,40 @@ const Product = () => {
   const { data, isError, isLoading } = useQuery({
     queryKey: ["plants", id],
     queryFn: async () => await getProduct(id),
+  });
+
+  const addProduct = async (product: Product) => {
+    const obj = {
+      img: product?.img,
+      price: product?.price,
+      name: product?.name,
+    };
+    const res = await fetch("http://localhost:3000/cart", {
+      method: "POST",
+      body: JSON.stringify(obj),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    const data = await res.json();
+    console.log("mutation", data);
+    return data;
+  };
+
+  const { data: cart } = useQuery({
+    queryKey: ["cart"],
+    queryFn: () => {
+      return fetch("http://localhost:3000/cart").then((res) => res.json());
+    },
+  });
+
+  console.log("CartData", cart);
+
+  const { mutateAsync } = useMutation({
+    mutationFn: addProduct,
+    onSuccess: () => {
+      queryClient.invalidateQueries(["cart"] as InvalidateQueryFilters);
+    },
   });
 
   if (isLoading) return <div>Loading...</div>;
@@ -80,7 +126,12 @@ const Product = () => {
               +
             </UI.Button>
             <UI.Button className="bg-[green] text-[#fff]">Buy now</UI.Button>
-            <UI.Button className="bg-[#fff] text-[black] border-1 border-[green]">
+            <UI.Button
+              className="bg-[#fff] text-[black] border-1 border-[green]"
+              onClick={async () => {
+                await mutateAsync(data);
+              }}
+            >
               Add to cart
             </UI.Button>
             <UI.Button className="bg-[#fff] border-1 border-[green]">
