@@ -3,6 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 import { useState } from "react";
 import { useParams } from "react-router";
 import UI from "../../../shared/ui";
+import { HeartIcon } from "../../../shared/assets/icons/HeartIcon";
 
 const sizes = ["S", "M", "L", "XL"];
 
@@ -32,13 +33,9 @@ const Product = () => {
 
   return (
     <>
-      <div className="w-full flex justify-between gap-10 mt-10">
-        <div key={data?.id} className="flex-1 flex justify-center">
-          <img
-            className="max-w-full h-full object-cover"
-            src={data?.img}
-            alt=""
-          />
+      <div className="w-full flex justify-between gap-10 mt-10 items-center">
+        <div key={data?.id} className="flex-1">
+          <img className="m-w-[100%] h-[300px]" src={data?.img} alt="" />
         </div>
         <div className="flex-1 flex flex-col gap-2">
           <h2 className="font-bold">{data?.name}</h2>
@@ -70,13 +67,31 @@ const Product = () => {
             >
               -
             </UI.Button>
-            <UI.Input size="md" color="default" className="w-[50px]" placeholder="0" />
+            <UI.Input
+              size="md"
+              color="default"
+              className="w-[50px]"
+              placeholder="0"
+            />
             <UI.Button
               size="sm"
               className="bg-[green] rounded-3xl  p-5 text-[#fff]"
             >
               +
             </UI.Button>
+            <UI.Button className="bg-[green] text-[#fff]">Buy now</UI.Button>
+            <UI.Button className="bg-[#fff] text-[black] border-1 border-[green]">
+              Add to cart
+            </UI.Button>
+            <UI.Button className="bg-[#fff] border-1 border-[green]">
+              <HeartIcon />
+            </UI.Button>
+          </div>
+          <div>
+            <p>SKU:</p>
+            <p>Categories:</p>
+            <p>Tags:</p>
+            <p>Share this products: </p>
           </div>
         </div>
       </div>
