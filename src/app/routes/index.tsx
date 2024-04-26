@@ -1,6 +1,6 @@
 import { Suspense } from "react";
 import { createBrowserRouter } from "react-router-dom";
-import { Home, Layout, Product, Shop } from "./lazy";
+import { Cart, Home, Layout, Product, Shop } from "./lazy";
 
 export const router = createBrowserRouter([
   {
@@ -42,6 +42,14 @@ export const router = createBrowserRouter([
       {
         path: "blogs",
         element: "blogs",
+      },
+      {
+        path: "/cart",
+        element: (
+          <Suspense fallback="loading...">
+            <Cart />
+          </Suspense>
+        ),
       },
     ],
   },

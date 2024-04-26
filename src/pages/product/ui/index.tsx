@@ -53,18 +53,8 @@ const Product = () => {
       },
     });
     const data = await res.json();
-    console.log("mutation", data);
     return data;
   };
-
-  const { data: cart } = useQuery({
-    queryKey: ["cart"],
-    queryFn: () => {
-      return fetch("http://localhost:3000/cart").then((res) => res.json());
-    },
-  });
-
-  console.log("CartData", cart);
 
   const { mutateAsync } = useMutation({
     mutationFn: addProduct,
