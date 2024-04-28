@@ -5,7 +5,7 @@ const GInput = extendVariants(Input, {
     variant: {
       bordered: {
         inputWrapper:
-          "border-[green] rounded-none focus-within:!border-green hover:!border-green",
+          "border-[#46A358] rounded-r-none focus-within:!border-green hover:!border-green",
       },
       flat: {
         inputWrapper: "rounded-r-none hover:!bg-[#fff] focus-within:!bg-[#fff]",

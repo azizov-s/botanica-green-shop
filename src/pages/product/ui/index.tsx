@@ -8,7 +8,7 @@ import {
 import { useState } from "react";
 import { useParams } from "react-router";
 import UI from "../../../shared/ui";
-import { HeartIcon } from "../../../shared/assets/icons/HeartIcon";
+import { Icons } from "../../../shared/assets/icons/icons";
 
 const sizes = ["S", "M", "L", "XL"];
 interface Product {
@@ -70,7 +70,7 @@ const Product = () => {
     <>
       <div className="w-full flex justify-between gap-10 mt-10 items-center">
         <div key={data?.id} className="flex-1">
-          <img className="m-w-[100%] h-[300px]" src={data?.img} alt="" />
+          <img className="max-w-full h-[300px] object-contain" src={data?.img} alt="" />
         </div>
         <div className="flex-1 flex flex-col gap-2">
           <h2 className="font-bold">{data?.name}</h2>
@@ -124,7 +124,7 @@ const Product = () => {
               Add to cart
             </UI.Button>
             <UI.Button className="bg-[#fff] border-1 border-[green]">
-              <HeartIcon />
+              <Icons.HeartIcon />
             </UI.Button>
           </div>
           <div>
