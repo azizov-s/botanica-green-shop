@@ -15,6 +15,7 @@ interface Product {
   img: string;
   name: string;
   price: string;
+  sku: number;
 }
 
 const Product = () => {
@@ -69,10 +70,17 @@ const Product = () => {
   return (
     <>
       <div className="w-full flex justify-between gap-10 mt-10 items-center">
-        <div key={data?.id} className="flex-1">
-          <img className="max-w-full h-[300px] object-contain" src={data?.img} alt="" />
+        <div
+          key={data?.id}
+          className="flex-1 bg-[#FBFBFB] flex items-center justify-center dark:bg-[black]"
+        >
+          <img
+            className="max-w-full h-[420px] object-contain p-10"
+            src={data?.img}
+            alt=""
+          />
         </div>
-        <div className="flex-1 flex flex-col gap-2">
+        <div className="flex flex-col gap-2 flex-1">
           <h2 className="font-bold">{data?.name}</h2>
           <p className="text-[green]">{data?.price}</p>
           <Divider />
@@ -128,10 +136,16 @@ const Product = () => {
             </UI.Button>
           </div>
           <div>
-            <p>SKU:</p>
+            <p>SKU: {data?.sku}</p>
             <p>Categories:</p>
-            <p>Tags:</p>
-            <p>Share this products: </p>
+            <p>Tags: Home, Garden, Plants</p>
+            <div className="flex items-center gap-2">
+              Share this products:
+              <Icons.Facebook />
+              <Icons.Twitter />
+              <Icons.LinkedIn />
+              <Icons.Mail />
+            </div>
           </div>
         </div>
       </div>

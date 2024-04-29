@@ -6,6 +6,7 @@ interface Plant {
   name: string;
   img: string;
   price: string;
+  sku: number;
 }
 
 const Shop = () => {

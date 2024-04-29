@@ -1,8 +1,6 @@
 import React from "react";
 import EmblaCarousel from "./EmblaCarousel";
 import { EmblaOptionsType } from "embla-carousel";
-import "../css/base.css";
-import "../css/sandbox.css";
 import "../css/embla.css";
 
 const OPTIONS: EmblaOptionsType = {};
