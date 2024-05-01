@@ -64,12 +64,5 @@
       "sku": 1995751877966
     }
   ],
-  "cart": [
-    {
-      "img": "https://i.postimg.cc/3rc2C93f/image-1-removebg-preview.png",
-      "price": "119.00",
-      "name": "Barberton Daisy",
-      "id": 1
-    }
-  ]
+  "cart": []
 }
